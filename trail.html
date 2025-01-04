@@ -1,0 +1,39 @@
+<div>
+    <h1>Your Cart</h1>
+    <div id="cart-container"></div> <!-- Container for cart items -->
+    <h3 id="total-price">Total: ₹0</h3> <!-- Total price display -->
+</div>
+<script>
+    // Function to load cart data on page load
+    window.onload = function() {
+        const cart = JSON.parse(localStorage.getItem('cart')) || []; // Retrieve cart data
+        const cartContainer = document.getElementById('cart-container'); // Cart item container
+        const totalContainer = document.getElementById('total-price'); // Total price element
+        let total = 0; // Initialize total price
+
+        // Clear existing cart display
+        cartContainer.innerHTML = '';
+
+        // Display each item in the cart
+        cart.forEach((item, index) => {
+            total += parseInt(item.price.replace('₹', '')); // Extract and sum up the price
+            cartContainer.innerHTML += `
+                <div class="cart-item">
+                    <span>${item.itemName} - ${item.price}</span>
+                    <button class="remove-btn" onclick="removeFromCart(${index})">Remove</button>
+                </div>
+            `;
+        });
+
+        // Update total price display
+        totalContainer.innerText = `Total: ₹${total}`;
+    };
+
+    // Function to remove an item from the cart
+    function removeFromCart(index) {
+        let cart = JSON.parse(localStorage.getItem('cart')) || []; // Retrieve cart data
+        cart.splice(index, 1); // Remove item by index
+        localStorage.setItem('cart', JSON.stringify(cart)); // Save updated cart back to localStorage
+        window.location.reload(); // Reload the page to reflect changes
+    }
+</script>
