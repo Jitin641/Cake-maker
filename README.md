@@ -145,7 +145,7 @@
 
             <!-- Cake 2 -->
             <div class="item" id="cake2">
-                <img src="Cake2.png" alt="Marvel Midnight Cake" class="item-image">
+                <img src="Cake 2.png" alt="Marvel Midnight Cake" class="item-image">
                 <h3 class="item-title">Marvel Midnight Cake</h3>
                 <p class="item-details">Flavour: Chocolate</p>
                 <p class="item-details">Price: ₹499</p>
@@ -154,7 +154,7 @@
 
             <!-- Cake 3 -->
             <div class="item" id="cake3">
-                <img src="Cake3.png" alt="Black Forest Cake" class="item-image">
+                <img src="Cake 3.png" alt="Black Forest Cake" class="item-image">
                 <h3 class="item-title">Black Forest Cake</h3>
                 <p class="item-details">Flavour: Chocolate</p>
                 <p class="item-details">Price: ₹349</p>
