@@ -38,7 +38,7 @@
         }
 
         .search-bar input {
-            width: 97%;
+            width: 100%;
             padding: 8px 12px;
             border: none;
             font-size: 1em;
@@ -169,19 +169,11 @@
     </footer>
 
     <script>
-        // Function to add items to the cart and store in localStorage
         function addToCart(itemName, price) {
-            // Retrieve the existing cart or initialize an empty array
             let cart = JSON.parse(localStorage.getItem('cart')) || [];
-
-            // Add the new item to the cart
             cart.push({ itemName, price });
-
-            // Save the updated cart back to localStorage
             localStorage.setItem('cart', JSON.stringify(cart));
-
-            // Notify the user
-            alert(`${itemName} added to your cart!`);
+            alert(`${itemName} added to cart!`);
         }
     </script>
 </body>
