@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cake market - Cake and Bakery Website</title>
+    <title>Cake Market - Cake and Bakery Website</title>
     <style>
         /* Updated Styles */
         body {
@@ -80,6 +80,8 @@
             background-color: #fff;
             padding: 15px;
             margin: 0;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
         }
 
         .item-image {
@@ -100,6 +102,7 @@
             border: none;
             cursor: pointer;
             font-size: 0.9em;
+            border-radius: 3px;
         }
 
         .btn:hover {
@@ -108,16 +111,17 @@
 
         footer {
             text-align: center;
-            padding: 5px;
+            padding: 10px;
             background-color: #333;
             color: white;
+            margin-top: 20px;
         }
     </style>
 </head>
 <body>
     <!-- Header -->
     <header>
-        <a href="#" class="logo">Cake market</a>
+        <a href="#" class="logo">Cake Market</a>
         <div class="search-bar">
             <input type="text" placeholder="Search for a cake or bakery item">
         </div>
@@ -132,29 +136,29 @@
         <section class="featured-cakes">
             <!-- Cake 1 -->
             <div class="item" id="cake1">
-                <img src=Cake 1.png alt="Belgium Chocolate Truffle Cake" class="item-image">
+                <img src="Cake1.png" alt="Belgium Chocolate Truffle Cake" class="item-image">
                 <h3 class="item-title">Belgium Chocolate Truffle Cake</h3>
                 <p class="item-details">Flavour: Chocolate</p>
                 <p class="item-details">Price: ₹399</p>
-                <button class="btn" onclick="addToCart('Belgium Chocolate Truffle Cake', '₹399')">Order Now</button>
+                <button class="btn" onclick="addToCart('Belgium Chocolate Truffle Cake', 399)">Order Now</button>
             </div>
 
             <!-- Cake 2 -->
             <div class="item" id="cake2">
-                <img src="C:\Users\user\Downloads\Tokyo Revengers S01 [RareToonsIndia]\All cake photo\Cake 2.png" alt="Marvel Midnight Cake" class="item-image">
+                <img src="Cake2.png" alt="Marvel Midnight Cake" class="item-image">
                 <h3 class="item-title">Marvel Midnight Cake</h3>
                 <p class="item-details">Flavour: Chocolate</p>
                 <p class="item-details">Price: ₹499</p>
-                <button class="btn" onclick="addToCart('Marvel Midnight Cake', '₹499')">Order Now</button>
+                <button class="btn" onclick="addToCart('Marvel Midnight Cake', 499)">Order Now</button>
             </div>
 
             <!-- Cake 3 -->
             <div class="item" id="cake3">
-                <img src="C:\Users\user\Downloads\Tokyo Revengers S01 [RareToonsIndia]\All cake photo\Cake 3.png" alt="Black Forest Cake" class="item-image">
+                <img src="Cake3.png" alt="Black Forest Cake" class="item-image">
                 <h3 class="item-title">Black Forest Cake</h3>
                 <p class="item-details">Flavour: Chocolate</p>
                 <p class="item-details">Price: ₹349</p>
-                <button class="btn" onclick="addToCart('Black Forest Cake', '₹349')">Order Now</button>
+                <button class="btn" onclick="addToCart('Black Forest Cake', 349)">Order Now</button>
             </div>
         </section>
     </main>
@@ -165,21 +169,20 @@
     </footer>
 
     <script>
+        // Function to add items to the cart and store in localStorage
         function addToCart(itemName, price) {
+            // Retrieve the existing cart or initialize an empty array
             let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+            // Add the new item to the cart
             cart.push({ itemName, price });
+
+            // Save the updated cart back to localStorage
             localStorage.setItem('cart', JSON.stringify(cart));
-            alert(`${itemName} added to cart!`);
+
+            // Notify the user
+            alert(`${itemName} added to your cart!`);
         }
     </script>
 </body>
 </html>
-<script>
-    // Function to add items to the cart and store in localStorage
-    function addToCart(itemName, price) {
-        let cart = JSON.parse(localStorage.getItem('cart')) || []; // Retrieve existing cart or create a new one
-        cart.push({ itemName, price }); // Add the new item
-        localStorage.setItem('cart', JSON.stringify(cart)); // Save cart back to localStorage
-        alert(`${itemName} added to cart!`); // Notify the user
-    }
-</script>
