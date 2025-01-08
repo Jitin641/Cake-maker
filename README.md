@@ -136,7 +136,7 @@
         <section class="featured-cakes">
             <!-- Cake 1 -->
             <div class="item" id="cake1">
-                <img src="Cake1.png" alt="Belgium Chocolate Truffle Cake" class="item-image">
+                <img src=Cake 1.png alt="Belgium Chocolate Truffle Cake" class="item-image">
                 <h3 class="item-title">Belgium Chocolate Truffle Cake</h3>
                 <p class="item-details">Flavour: Chocolate</p>
                 <p class="item-details">Price: ₹399</p>
